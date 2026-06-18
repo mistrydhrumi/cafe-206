@@ -35,6 +35,11 @@ export default function Hero() {
 
             </div>
 
+            <p>you are hacked</p>
+
+
+            <p>You are hacked</p>
+
             {/* 3. Interactive 3D Canvas Gallery Layer */}
             <div className="w-full items-center justify-center">
                 <Gallary />
