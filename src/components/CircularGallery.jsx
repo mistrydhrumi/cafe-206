@@ -257,6 +257,7 @@ class Media {
         uniform vec2 uPlaneSizes;
         uniform sampler2D tMap;
         uniform float uBorderRadius;
+        uniform float uHover; // 0.0 = Grayscale, 1.0 = Full Color
         varying vec2 vUv;
         
         float roundedBoxSDF(vec2 p, vec2 b, float r) {
@@ -275,13 +276,17 @@ class Media {
           );
           vec4 color = texture2D(tMap, uv);
           
+          // --- Grayscale Conversion Logic ---
+          float grayscale = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+          vec3 finalColor = mix(vec3(grayscale), color.rgb, uHover);
+          
           float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
           
           // Smooth antialiasing for edges
           float edgeSmooth = 0.002;
           float alpha = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
           
-          gl_FragColor = vec4(color.rgb, alpha);
+          gl_FragColor = vec4(finalColor, alpha);
         }
       `,
             uniforms: {
@@ -290,7 +295,8 @@ class Media {
                 uImageSizes: { value: [0, 0] },
                 uSpeed: { value: 0 },
                 uTime: { value: 100 * Math.random() },
-                uBorderRadius: { value: this.borderRadius }
+                uBorderRadius: { value: this.borderRadius },
+                uHover: { value: 0 } // <-- Add this line right here (0 means default B&W)
             },
             transparent: true
         });
@@ -324,6 +330,24 @@ class Media {
 
         const x = this.plane.position.x;
         const H = this.viewport.width / 2;
+
+        // --- New Hover/Center Detection Logic ---
+        // Checks how close the item is to the exact center of the screen
+        const distanceFromCenter = Math.abs(x);
+
+        // If it's the active center item (within its own width range), fade it to color
+        let targetHover = 0.0;
+        if (distanceFromCenter < this.plane.scale.x * 0.6) {
+            targetHover = 1.0;
+        }
+
+        // Smoothly interpolate (lerp) the uniform value so it fades nicely like CSS transitions
+        this.program.uniforms.uHover.value = lerp(
+            this.program.uniforms.uHover.value,
+            targetHover,
+            0.1
+        );
+        // ----------------------------------------
 
         if (this.bend === 0) {
             this.plane.position.y = 0;
