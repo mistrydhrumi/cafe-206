@@ -12,6 +12,7 @@ export default function Hero() {
                 <Nav />
             </div>
 
+<p className="font-3xl">you are hacked</p>
             {/* 2. Editorial Cafe Content Layer (Dynamic device positioning using mt-32/mt-40) */}
             <div className="w-full max-w-4xl mx-auto text-center mt-32 sm:mt-40 mb-4 z-20 pointer-events-none select-none">
 
