@@ -432,18 +432,20 @@ class App {
     }
     createMedias(items, bend = 1, textColor, borderRadius, font) {
         const defaultItems = [
-            { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
-            { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
-            { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Waterfall' },
-            { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Strawberries' },
-            { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Deep Diving' },
-            { image: `https://picsum.photos/seed/16/800/600?grayscale`, text: 'Train Track' },
-            { image: `https://picsum.photos/seed/17/800/600?grayscale`, text: 'Santorini' },
-            { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Blurry Lights' },
-            { image: `https://picsum.photos/seed/9/800/600?grayscale`, text: 'New York' },
-            { image: `https://picsum.photos/seed/10/800/600?grayscale`, text: 'Good Boy' },
-            { image: `https://picsum.photos/seed/21/800/600?grayscale`, text: 'Coastline' },
-            { image: `https://picsum.photos/seed/12/800/600?grayscale`, text: 'Palm Trees' }
+            { image: `/coffee/coffee1.jpg`, text: 'Lish Brew' },
+            { image: `/coffee/coffee2.jpg`, text: 'Espresso Tonic' },
+            { image: `/coffee/coffee3.jpg`, text: 'Ruby Espresso' },
+            { image: `/coffee/coffee4.jpg`, text: 'Cola Americano' },
+            { image: `/coffee/coffee5.jpg`, text: 'Classic Iced Latte' },
+            { image: `/coffee/coffee6.jpg`, text: 'Kiwi Cold Brew' },
+            { image: `/coffee/coffee7.jpg`, text: 'Espresso Cloud Latte' },
+            // { image: `/coffee/coffee1.jpg`, text: 'Blurry Lights' },
+            // { image: `/coffee/coffee2.jpg`, text: 'New York' },
+            // { image: `/coffee/coffee3.jpg`, text: 'Good Boy' },
+            // { image: `/coffee/coffee4.jpg`, text: 'Coastline' },
+            // { image: `/coffee/coffee5.jpg`, text: 'Palm Trees' },
+            // { image: `/coffee/coffee6.jpg`, text: 'Train Track' },
+            // { image: `/coffee/coffee7.jpg`, text: 'Santorini' }
         ];
         const galleryItems = items && items.length ? items : defaultItems;
         this.mediasImages = galleryItems.concat(galleryItems);

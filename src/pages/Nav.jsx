@@ -3,8 +3,7 @@ import SideRays from '../components/SideRays';
 const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Menu', href: '/menu' },
-    { label: 'Coffee', href: '/coffee' },
-];
+    { label: 'Coffee', href: '/coffee' },];
 export default function Nav() {
     return (
         <>
@@ -23,7 +22,7 @@ export default function Nav() {
             />
 
             <PillNav
-                logo="/images/images.png"
+                logo="/images/images.jpg"
                 items={navItems}
                 activeHref=""
                 baseColor="#ffffff"
