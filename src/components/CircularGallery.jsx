@@ -463,13 +463,6 @@ class App {
             { image: `/coffee/coffee5.jpg`, text: 'Classic Iced Latte' },
             { image: `/coffee/coffee6.jpg`, text: 'Kiwi Cold Brew' },
             { image: `/coffee/coffee7.jpg`, text: 'Espresso Cloud Latte' },
-            // { image: `/coffee/coffee1.jpg`, text: 'Blurry Lights' },
-            // { image: `/coffee/coffee2.jpg`, text: 'New York' },
-            // { image: `/coffee/coffee3.jpg`, text: 'Good Boy' },
-            // { image: `/coffee/coffee4.jpg`, text: 'Coastline' },
-            // { image: `/coffee/coffee5.jpg`, text: 'Palm Trees' },
-            // { image: `/coffee/coffee6.jpg`, text: 'Train Track' },
-            // { image: `/coffee/coffee7.jpg`, text: 'Santorini' }
         ];
         const galleryItems = items && items.length ? items : defaultItems;
         this.mediasImages = galleryItems.concat(galleryItems);
