@@ -1,4 +1,3 @@
-import React from "react";
 import Nav from "./Nav";
 import Gallary from "./Gallary";
 import SplashCursor from "../components/SplashCursor";
@@ -18,7 +17,7 @@ export default function Hero() {
                 RAINBOW_MODE={false}
                 COLOR="#6F4E37"
             />
-            <div className="flex justify-center items-center z-50" style={{ width: '100%', height: '100px', position: 'absolute', top: 0, left: 0 }}>
+            <div className="w-full h-[100px] flex items-center justify-center px-4 sm:px-6 lg:px-8 fixed top-0 left-0 z-50 backdrop-blur-md bg-black/40 border-b border-neutral-900">
                 <Nav />
             </div>
 
