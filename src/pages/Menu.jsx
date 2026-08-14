@@ -1,5 +1,5 @@
-import React from "react";
 import Nav from "./Nav";
+import SplashCursor from "../components/SplashCursor";
 
 export default function Menu() {
     const menuItems = [
@@ -23,12 +23,31 @@ export default function Menu() {
             price: "$6.00",
             badgeColor: "text-amber-300 bg-amber-300/10 border-amber-300/20",
             description: "Single-origin Ethiopian beans saturated inside cold steel barrels for 12 hours. Poured straight from the draft line with cascading layers of creamy texture."
+        },
+        {
+            id: "04",
+            title: "Velvet Nitro Cold Brew",
+            price: "$6.00",
+            badgeColor: "text-amber-300 bg-amber-300/10 border-amber-300/20",
+            description: "Single-origin Ethiopian beans saturated inside cold steel barrels for 12 hours. Poured straight from the draft line with cascading layers of creamy texture."
         }
     ];
 
     return (
-        <div className="w-full min-h-screen bg-black text-white relative selection:bg-amber-500/30">
 
+        <div className="w-full min-h-screen bg-black text-white relative selection:bg-amber-500/30">
+            <SplashCursor
+                DENSITY_DISSIPATION={3.5}
+                VELOCITY_DISSIPATION={2}
+                PRESSURE={0.1}
+                CURL={3}
+                SPLAT_RADIUS={0.2}
+                SPLAT_FORCE={6000}
+                COLOR_UPDATE_SPEED={10}
+                SHADING
+                RAINBOW_MODE={false}
+                COLOR="#6F4E37"
+            />
             {/* Fixed Navigation Bar so it stays pinned at the top */}
             <div className="w-full h-[100px] flex items-center justify-center px-4 sm:px-6 lg:px-8 fixed top-0 left-0 z-50 backdrop-blur-md bg-black/40 border-b border-neutral-900">
                 <Nav />
